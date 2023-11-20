@@ -1,6 +1,7 @@
 package ie.atu;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Storage {
@@ -9,14 +10,14 @@ public class Storage {
 
         String fileName = "File13.txt";
 
-        File myFile = new File(fileName);
+
+
 
         try{
-            if(myFile.createNewFile()){
-                System.out.println("File created successfully at " + myFile.getAbsolutePath());
-            } else{
-                System.out.println("File already exists at " + myFile.getAbsolutePath());
-            }
+           FileWriter myFile = new FileWriter("File13.txt", true);
+           myFile.write("\nGoodevening");
+           myFile.append("\nJosh Thompson");
+           myFile.close();
         } catch (IOException e) {
             System.out.println("An error occurred while creating the file. ");
         }
